@@ -10,8 +10,6 @@ class Guest(db.Model):
     phone = db.Column(db.String(120), nullable = False)
     events_attending = db.relationship('Event', secondary='guest_event', back_populates='guests')
 
-# STRETCH CHALLENGE: Add a field `event_type` as an Enum column that denotes the
-# type of event (Party, Study, Networking, etc)
 class Event(db.Model):
     """Event Model"""
     id = db.Column(db.Integer, primary_key=True)
